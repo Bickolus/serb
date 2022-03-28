@@ -8,7 +8,7 @@ This is a Book Search Engine that was originally built with RESTful API. The app
 
 > Github Repository Link: [https://github.com/Bickolus/serb](https://github.com/Bickolus/serb)
 >
-> Deployed Link:
+> Deployed Link: [https://bickolus-serb.herokuapp.com/](https://bickolus-serb.herokuapp.com/)
 
 ## Table of Contents
 
