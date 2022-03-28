@@ -49,13 +49,13 @@ const resolvers = {
     },
     saveBook: async (parent, { input }, context) => {
       if (context.user) {
-        const updatedUser = await User.findOneAndUpdate(
+        const book = await User.findByIdAndUpdate(
           { _id: context.user._id },
           // We are adding this new book to the array of saved books
-          { $addToSet: { savedBooks: input } },
-          { new: true, runValidators: true }
-        );
-        return updatedUser;
+          { $push: { savedBooks: input } },
+          { new: true }
+        ).populate("savedBooks");
+        return book;
       }
       throw new AuthenticationError("You need to be logged in to save a book!");
     },
